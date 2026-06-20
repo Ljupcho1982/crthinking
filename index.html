@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRThinking — Applied LLM &amp; AI Engineering</title>
+  <meta name="description" content="CRThinking builds production-grade Large Language Model systems — fine-tuned local AI, voice agents and domain copilots that run where your data lives. Led by Ljupcho Shemov." />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Blade Runner atmosphere -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-orb orb-a" aria-hidden="true"></div>
+  <div class="bg-orb orb-b" aria-hidden="true"></div>
+  <div class="bg-orb orb-c" aria-hidden="true"></div>
+  <div class="searchlight" aria-hidden="true"></div>
+  <canvas id="neural" class="bg-canvas" aria-hidden="true"></canvas>
+  <div class="skyline" aria-hidden="true"></div>
+  <div class="fog" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="flicker" aria-hidden="true"></div>
+
+  <div class="scroll-progress" id="progress" aria-hidden="true"></div>
+
+  <!-- Nav -->
+  <header class="nav" id="nav">
+    <a class="brand" href="#home" aria-label="CRThinking home">
+      <img src="assets/logo.svg" alt="CRThinking" height="40" />
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#solution">Solution</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#process">Process</a>
+      <a href="#work">Work</a>
+      <a href="#founder">Founder</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="btn btn-ghost">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-grid">
+        <div class="hero-copy reveal">
+          <span class="pill"><span class="dot"></span> More human than human · Select AI engagements</span>
+          <h1 class="hero-title">
+            Bespoke <span class="grad">intelligence</span>,
+            built for the <span class="grad">few who demand more</span>.
+          </h1>
+          <p class="hero-sub">
+            CRThinking is not an off-the-shelf AI shop. We craft a small number of
+            fine-tuned, privately-owned LLM systems each year — domain copilots and
+            offline voice agents engineered to run where your data lives.
+          </p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary magnetic">Request an engagement <span class="arr">→</span></a>
+            <a href="#solution" class="btn btn-ghost magnetic">See our approach</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong data-count="6" data-suffix="">0</strong><span>Crafted AI systems</span></div>
+            <div><strong data-count="100" data-suffix="%">0</strong><span>Privately owned</span></div>
+            <div><strong data-count="4" data-suffix="">0</strong><span>Engagements / year</span></div>
+          </div>
+        </div>
+
+        <!-- Animated product mockup -->
+        <div class="hero-visual reveal">
+          <div class="mock tilt" id="tilt">
+            <div class="mock-bar">
+              <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+              <span class="mock-title">crthinking · agent</span>
+            </div>
+            <div class="mock-body">
+              <div class="chat user">Build me a private AI that answers our phones.</div>
+              <div class="chat bot">
+                <span class="bot-ic">◆</span>
+                <span id="typed"></span><span class="caret">▋</span>
+              </div>
+              <div class="mock-metrics">
+                <div><span class="mlabel">Latency</span><span class="mval grad">38&nbsp;ms</span></div>
+                <div><span class="mlabel">On-device</span><span class="mval grad">100%</span></div>
+                <div><span class="mlabel">Model</span><span class="mval grad">fine-tuned</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="mock-glow" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <!-- Tech marquee -->
+      <div class="marquee reveal" aria-hidden="true">
+        <div class="marquee-track">
+          <span>LLM Fine-Tuning</span><span>•</span><span>LoRA / QLoRA</span><span>•</span>
+          <span>FastAPI</span><span>•</span><span>React</span><span>•</span><span>WPF .NET</span><span>•</span>
+          <span>RAG</span><span>•</span><span>Voice Agents</span><span>•</span><span>Quantization</span><span>•</span>
+          <span>Offline AI</span><span>•</span><span>Python</span><span>•</span>
+          <span>LLM Fine-Tuning</span><span>•</span><span>LoRA / QLoRA</span><span>•</span>
+          <span>FastAPI</span><span>•</span><span>React</span><span>•</span><span>WPF .NET</span><span>•</span>
+          <span>RAG</span><span>•</span><span>Voice Agents</span><span>•</span><span>Quantization</span><span>•</span>
+          <span>Offline AI</span><span>•</span><span>Python</span><span>•</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="section" id="solution">
+      <div class="section-head reveal">
+        <span class="eyebrow">Our Solution</span>
+        <h2>From a vague AI idea to a <span class="grad">working, owned system</span>.</h2>
+        <p>Most teams get stuck wiring prompts together. We build the full stack — model, retrieval, guardrails and interface — so the result is reliable, private and genuinely yours.</p>
+      </div>
+      <div class="pillars">
+        <article class="pillar reveal">
+          <div class="pillar-no">01</div>
+          <h3>The Model</h3>
+          <p>Custom fine-tuned LLMs — from 1B local models to larger systems — adapted to your domain, your language, your data.</p>
+          <span class="pillar-line"></span>
+        </article>
+        <article class="pillar reveal">
+          <div class="pillar-no">02</div>
+          <h3>The Engine</h3>
+          <p>Retrieval, tools, guardrails and orchestration that turn a raw model into a dependable, grounded product.</p>
+          <span class="pillar-line"></span>
+        </article>
+        <article class="pillar reveal">
+          <div class="pillar-no">03</div>
+          <h3>The Interface</h3>
+          <p>Desktop, web or fully offline runtimes — FastAPI + React or WPF .NET — built to ship, not to demo.</p>
+          <span class="pillar-line"></span>
+        </article>
+      </div>
+    </section>
+
+    <!-- CAPABILITIES / SERVICES -->
+    <section class="section" id="capabilities">
+      <div class="section-head reveal">
+        <span class="eyebrow">Services — LLM Projects</span>
+        <h2>LLM projects, end&nbsp;to&nbsp;end</h2>
+        <p>Specialised engineering across the modern AI stack.</p>
+      </div>
+      <div class="cards">
+        <article class="card tilt-s reveal">
+          <div class="card-ic">⚙️</div>
+          <h3>Custom LLM Fine-Tuning</h3>
+          <p>Domain-adapted models trained on your data with Colab/cloud recipes that actually converge.</p>
+          <ul><li>LoRA / QLoRA pipelines</li><li>Dataset curation &amp; eval</li><li>Quantization for laptops</li></ul>
+        </article>
+        <article class="card tilt-s reveal">
+          <div class="card-ic">🗣️</div>
+          <h3>AI Voice &amp; Phone Agents</h3>
+          <p>Offline, fine-tuned voice agents that answer calls, book jobs and speak your customers' language.</p>
+          <ul><li>Real-time speech ↔ text</li><li>Multilingual (incl. Macedonian)</li><li>On-prem &amp; private</li></ul>
+        </article>
+        <article class="card tilt-s reveal">
+          <div class="card-ic">🧭</div>
+          <h3>Domain Copilots</h3>
+          <p>Desktop &amp; web copilots that design and decide — bespoke to your field and workflow.</p>
+          <ul><li>FastAPI + React / WPF .NET</li><li>RAG over your documents</li><li>Tool &amp; agent orchestration</li></ul>
+        </article>
+        <article class="card tilt-s reveal">
+          <div class="card-ic">🔒</div>
+          <h3>Local &amp; Private AI</h3>
+          <p>Privacy-first deployments that run on modest hardware — no cloud lock-in, no data leaving the building.</p>
+          <ul><li>Local inference tuning</li><li>RAM-aware optimization</li><li>Edge &amp; offline runtimes</li></ul>
+        </article>
+        <article class="card tilt-s reveal">
+          <div class="card-ic">🛰️</div>
+          <h3>Signal &amp; Data Intelligence</h3>
+          <p>Pattern-detection systems — from classical detectors to quantum-inspired methods for noisy data.</p>
+          <ul><li>Anomaly &amp; structure detection</li><li>Spectral / entropy analysis</li><li>Automated reporting</li></ul>
+        </article>
+        <article class="card tilt-s reveal">
+          <div class="card-ic">🚀</div>
+          <h3>AI Strategy &amp; Prototyping</h3>
+          <p>Fast, honest prototypes that prove value in days, plus a roadmap to production.</p>
+          <ul><li>Feasibility &amp; scoping</li><li>Rapid POCs</li><li>Production hardening</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROCESS TIMELINE -->
+    <section class="section" id="process">
+      <div class="section-head reveal">
+        <span class="eyebrow">How We Work</span>
+        <h2>A clear path from <span class="grad">idea to ownership</span></h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-line" aria-hidden="true"><span class="tl-fill" id="tlFill"></span></div>
+        <div class="tl-step reveal">
+          <div class="tl-node">01</div>
+          <div class="tl-card">
+            <h3>Discover &amp; scope</h3>
+            <p>We map the real workflow and data, and find where an LLM creates leverage — not hype.</p>
+          </div>
+        </div>
+        <div class="tl-step reveal">
+          <div class="tl-node">02</div>
+          <div class="tl-card">
+            <h3>Fine-tune &amp; ground</h3>
+            <p>Custom fine-tuning and retrieval so the model speaks your domain, literally.</p>
+          </div>
+        </div>
+        <div class="tl-step reveal">
+          <div class="tl-node">03</div>
+          <div class="tl-card">
+            <h3>Engineer the product</h3>
+            <p>FastAPI + React, WPF desktop apps, or fully offline runtimes — built to ship.</p>
+          </div>
+        </div>
+        <div class="tl-step reveal">
+          <div class="tl-node">04</div>
+          <div class="tl-card">
+            <h3>Deploy &amp; own</h3>
+            <p>You keep the weights, the code and the data. Runs on your hardware, on your terms.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="section" id="work">
+      <div class="section-head reveal">
+        <span class="eyebrow">Selected Work</span>
+        <h2>Things we've actually <span class="grad">built</span></h2>
+      </div>
+      <div class="work-grid">
+        <article class="work-card reveal">
+          <span class="tag">Voice AI</span>
+          <h3>AI Voice Agent — “At Your Service”</h3>
+          <p>Offline fine-tuned LLM phone agent that answers calls and handles bookings — fully local, Macedonian-speaking.</p>
+        </article>
+        <article class="work-card reveal">
+          <span class="tag">Copilot</span>
+          <h3>EVForge</h3>
+          <p>Desktop EV design &amp; production copilot pairing an LLM with FastAPI + React for engineering workflows.</p>
+        </article>
+        <article class="work-card reveal">
+          <span class="tag">Copilot</span>
+          <h3>SkyForge</h3>
+          <p>A WPF .NET eVTOL design studio with a FastAPI backend and a fine-tuned flying-EV assistant.</p>
+        </article>
+        <article class="work-card reveal">
+          <span class="tag">Edge AI</span>
+          <h3>Drone Designer</h3>
+          <p>A coherent fine-tuned 1B model running locally on a laptop for rapid drone design iteration.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- FOUNDER -->
+    <section class="section founder" id="founder">
+      <div class="founder-wrap reveal">
+        <div class="founder-photo" aria-hidden="true">
+          <div class="halo"></div>
+          <div class="sweep"></div>
+          <div class="avatar"><span>LS</span></div>
+          <div class="ring"></div>
+          <div class="ring ring-2"></div>
+          <div class="orbit"><span class="node"></span></div>
+          <div class="orbit orbit-2"><span class="node"></span></div>
+        </div>
+        <div class="founder-body">
+          <span class="eyebrow">Founder</span>
+          <h2>Ljupcho Shemov</h2>
+          <p class="lead">AI engineer building privacy-first LLM systems — from fine-tuned voice agents to desktop design copilots — that run on real, modest hardware.</p>
+          <p>Ljupcho works across the full applied-AI stack: model fine-tuning (LoRA/QLoRA, quantization), retrieval, and product engineering in FastAPI + React and WPF .NET. The throughline is independence — software you own, that runs locally and respects your data.</p>
+          <div class="chips">
+            <span>LLM Fine-Tuning</span><span>Voice Agents</span><span>FastAPI</span>
+            <span>React</span><span>WPF .NET</span><span>Local / Offline AI</span>
+            <span>Python</span><span>RAG</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="section-head reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2>Questions, answered</h2>
+      </div>
+      <div class="faq">
+        <details class="faq-item reveal" open>
+          <summary>Will my data stay private?<span class="faq-ic">+</span></summary>
+          <p>Yes — that's the whole point. CRThinking specialises in local and on-prem AI. Models can run fully offline on your own hardware, so nothing has to leave the building.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Do I need expensive GPUs or cloud?<span class="faq-ic">+</span></summary>
+          <p>Often not. We fine-tune and quantize models to run on modest machines — even laptops — and only reach for the cloud when it genuinely earns its place.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>What languages can the AI speak?<span class="faq-ic">+</span></summary>
+          <p>Multilingual by design, including Macedonian. Voice and text agents are tuned to your customers' actual language and tone.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Do I own the result?<span class="faq-ic">+</span></summary>
+          <p>Completely. You keep the weights, the source code and the data. No vendor lock-in, no per-seat AI tax.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>How fast can we start?<span class="faq-ic">+</span></summary>
+          <p>A focused prototype can prove value in days. Email or call and we'll scope it honestly — including whether an LLM is even the right tool.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="contact-card reveal">
+        <span class="eyebrow">Enquire</span>
+        <h2>Commission your <span class="grad">AI system</span>.</h2>
+        <p>A handful of engagements are taken each year. Tell me about the problem — I'll tell you honestly whether it's a fit, and how I'd build it.</p>
+        <div class="contact-actions">
+          <a class="contact-btn magnetic" href="mailto:ljupco.semov@gmail.com">
+            <span class="ci">✉️</span>
+            <span><small>Email</small>ljupco.semov@gmail.com</span>
+          </a>
+          <a class="contact-btn magnetic" href="tel:+38970983035">
+            <span class="ci">📞</span>
+            <span><small>Phone</small>+389 70 983 035</span>
+          </a>
+        </div>
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/ajax/ljupco.semov@gmail.com" method="POST">
+          <div class="cf-row">
+            <input type="text" name="name" placeholder="Your name" required autocomplete="name" />
+            <input type="email" name="email" placeholder="Your email" required autocomplete="email" />
+          </div>
+          <input type="hidden" name="_subject" value="New CRThinking enquiry" />
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <textarea name="message" rows="4" placeholder="Tell me about your project — what problem should the AI solve?" required></textarea>
+          <button type="submit" class="btn btn-primary big magnetic">Send enquiry <span class="arr">→</span></button>
+          <p class="cf-status" id="cfStatus" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="assets/logo.svg" alt="CRThinking" height="34" />
+    <p class="tears"><span id="tears"></span><span class="caret">▋</span></p>
+    <p>© <span id="year"></span> CRThinking — Applied LLM &amp; AI Engineering. Built by Ljupcho Shemov.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
